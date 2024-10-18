@@ -17,14 +17,15 @@ class Product extends Model
         'images',
         'description',
         'price',
+        'price_discount',
         'is_active',
         'is_featured',
         'in_stock',
         'on_sale',
     ];
 
-    protected $cast = [
-        'images' => 'array'
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function brand()
