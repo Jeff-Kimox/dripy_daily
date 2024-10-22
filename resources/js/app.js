@@ -1,2 +1,7 @@
+import { HSStaticMethods } from 'preline';
 import './bootstrap';
-import 'preline'
+import 'preline';
+
+document.addEventListener('livewire:navigated', () => { 
+    HSStaticMethods.autoInit();
+})
