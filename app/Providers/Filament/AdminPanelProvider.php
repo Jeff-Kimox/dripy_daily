@@ -36,6 +36,8 @@ class AdminPanelProvider extends PanelProvider
                 'success' => Color::Lime,    
                 'warning' => Color::Amber, 
             ])
+            ->brandLogo(asset('./assets/images/logo.png'))
+            ->favicon(asset('./assets/favicon.svg'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

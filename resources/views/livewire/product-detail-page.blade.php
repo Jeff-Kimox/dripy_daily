@@ -1,7 +1,7 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
     <section class="overflow-hidden bg-white py-11 font-poppins dark:bg-gray-800">
         <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
-            
+
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full mb-8 md:w-1/2 md:mb-0" x-data="{ mainImage: '{{ url('storage', $product->images[0]) }}' }">
                     <div class="sticky top-0 z-50 overflow-hidden ">
@@ -32,7 +32,8 @@
                     <div class="lg:pl-20">
                         <div class="mb-8 [&>ul]:list-disc [&>ul]:ml-4">
                             <h2 class="max-w-xl mb-6 text-2xl font-bold dark:text-gray-400 md:text-4xl">
-                                {{ $product->name }}</h2>
+                                {{ $product->name }}
+                            </h2>
                             <p class="inline-block mb-6 text-4xl font-bold text-gray-700 dark:text-gray-400 ">
                                 <span>{{ Number::currency($product->price, 'KES') }}</span>
                                 <span class="text-base font-normal text-gray-500 line-through dark:text-gray-400">{{ Number::currency($product->price_discount, 'KES') }}</span>
@@ -66,4 +67,33 @@
 
         </div>
     </section>
+
+    @if($relatedProducts->isEmpty())
+    <p class="text-gray-500">No related products found.</p>
+    @else
+    <section class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400 mb-6">Related Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            @foreach($relatedProducts as $relatedProduct)
+            <div class="bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900 p-4 rounded-lg">
+                <a href="/products/{{ $product->slug }}">
+                    <img src="{{ url('storage', $relatedProduct->images[0]) }}" alt="{{ $relatedProduct->name }}" class="w-full h-40 object-cover rounded-lg">
+                </a>
+                <div class="mt-4">
+                    <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-400">
+                        <a href="/products/{{ $product->slug }}">{{ $relatedProduct->name }}</a>
+                    </h3>
+                    <!-- <p class="text-sm text-gray-500 dark:text-gray-400">{{ Str::limit($relatedProduct->description, 50) }}</p> -->
+                    <p class="text-lg font-bold text-gray-700 dark:text-gray-400 mt-2">
+                        {{ Number::currency($relatedProduct->price, 'KES') }}
+                    </p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
+
+    @endif
+
+
 </div>

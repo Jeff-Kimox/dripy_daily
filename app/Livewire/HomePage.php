@@ -13,7 +13,8 @@ class HomePage extends Component
 {
     public function render()
     {
-        $brands = Brand::where('is_active', 1)->get();
+        // $brands = Brand::where('is_active', 1)->get();
+        $brands = Brand::where('is_active', 1)->latest()->take(4)->get();
         $categories = Category::where('is_active', 1)->get();
 
 

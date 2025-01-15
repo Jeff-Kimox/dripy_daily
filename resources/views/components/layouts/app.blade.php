@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{{ asset('assets/favicon.svg') }}" type="image/svg+xml">
 
         <title>{{ $title ?? 'dripydaily' }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -20,6 +21,9 @@
         @livewire('partials.footer')
         
         @livewireScripts
+
+        
+
 
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   

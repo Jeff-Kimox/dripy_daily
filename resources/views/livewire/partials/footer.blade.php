@@ -32,8 +32,9 @@
 
       <div class="col-span-2">
         <h4 class="font-semibold text-gray-100">Stay up to date</h4>
+        @livewire('footer-form')
 
-        <form>
+        <!-- <form>
           <div class="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 dark:bg-gray-800">
             <div class="w-full">
               <input type="text" id="hero-input" name="hero-input" class="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-transparent dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Enter your email">
@@ -43,7 +44,8 @@
             </a>
           </div>
 
-        </form>
+        </form> -->
+
       </div>
       <!-- End Col -->
     </div>
@@ -51,7 +53,7 @@
 
     <div class="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
       <div class="flex justify-between items-center">
-        <p class="text-sm text-gray-400">© 2024 dripydaily. All rights reserved.</p>
+        <p class="text-sm text-gray-400">© 2025 dripydaily. All rights reserved.</p>
       </div>
       <!-- End Col -->
 
